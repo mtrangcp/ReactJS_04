@@ -61,7 +61,7 @@ let manager: CourseManager = {
 }
 
 const getCompletedStudents = (course: Course): Student[] => {
-     return course.students.filter(stu => stu.hasCompleted);
+    return course.students.filter(stu => stu.hasCompleted);
 }
 
 const calculateAverageScore = (course: Course): number | null => {
@@ -72,7 +72,7 @@ const calculateAverageScore = (course: Course): number | null => {
             if (el.finalScore) total += el.finalScore;
         });
 
-        let avg = total / listStu.length;
+        let avg = total / course.students.length;
         return avg;
     } else {
         return null;
